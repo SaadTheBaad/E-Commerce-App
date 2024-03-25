@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route index element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
-          <Route path="/productpage" element={<Productpage />} />
+          <Route path="/Productpage" element={<Productpage />} />
         </Routes>
       </BrowserRouter>
     </div>
