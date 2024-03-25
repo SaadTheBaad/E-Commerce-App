@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link component for routing
-import review from '../data/review'; // Import the reviews array
-import './HomeMainSection.css'; // Import CSS file for styling
+import { Link } from 'react-router-dom';
+import review from '../data/review';
+import './HomeMainSection.css';
 
 const HomeMainSection = () => {
     const [randomReviews, setRandomReviews] = useState([]);
@@ -33,7 +33,7 @@ const HomeMainSection = () => {
             </section>
             <section className="shop-now">
                 {/* <!-- Shop Now Button (as a link to the Products page) --> */}
-                <Link to="/products">
+                <Link to="/Productpage">
                     <button className="shop-now-button">Shop Now</button>
                 </Link>
             </section>
