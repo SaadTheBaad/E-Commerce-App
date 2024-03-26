@@ -5,7 +5,10 @@ import Cart from './Cart';
 import Footer from './Footer';
 
 const ProductPage = () => {
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
   const addToCart = (product) => {
     const existingItemIndex = shoppingCart.findIndex((item) => item.id === product.id);
