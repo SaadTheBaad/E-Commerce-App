@@ -20,9 +20,9 @@ const ProductItem = ({ product, addToCart }) => {
     <div className="product-item" onMouseEnter={toggleDetails} onMouseLeave={toggleDetails}>
       <img src={product.image} alt={product.name} height="150px" width="150px" />
       <h3>{product.name}</h3>
-      <p>{state.showDetails && product.description}</p>
       <p>${product.price}</p>
       <button onClick={() => addToCart(product)}>Add to Cart</button>
+      <p>{state.showDetails && product.description}</p>
     </div>
   );
 };
