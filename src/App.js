@@ -1,22 +1,26 @@
 import React from 'react';
-import { BrowserRouter, BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import Homepage from './component/Homepage';
-import Productpage from './component/Productpage';
+import ProductPage from './component/Productpage';
 import LoginPage from './component/LoginPage';
+import ProtectedRoute from './component/ProtectedRoute';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <AuthProvider>
+      <Router>
         <Routes>
           <Route index element={<Homepage />} />
           <Route path="/Homepage" element={<Homepage />} />
-          <Route path="/Productpage" element={<Productpage />} />
+          <Route path="/Productpage" element={
+            <ProtectedRoute>
+              <ProductPage />
+            </ProtectedRoute>} />
           <Route path="/LoginPage" element={<LoginPage />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
