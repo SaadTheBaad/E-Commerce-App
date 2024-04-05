@@ -5,12 +5,12 @@ const SignupForm = ({ onSwitchToLogin }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState(''); // State for the message
+  const [message, setMessage] = useState(''); 
 
   const handleSignup = (e) => {
     e.preventDefault();
   
-    setMessage(''); // Clear previous messages
+    setMessage('');
   
     if (!username || !password || !confirmPassword || !email) {
       setMessage("All fields are required.");
@@ -31,8 +31,7 @@ const SignupForm = ({ onSwitchToLogin }) => {
     })
     .then(response => response.json())
     .then(data => {
-      setMessage(data.message); // Display success or error message from the backend
-      // Reset form fields on success or when user is already taken
+      setMessage(data.message); 
       if (data.message === 'User registered successfully' || data.message === 'Username is already taken') {
         setUsername('');
         setPassword('');
@@ -42,7 +41,7 @@ const SignupForm = ({ onSwitchToLogin }) => {
     })
     .catch((error) => {
       console.error('Error:', error);
-      setMessage("An error occurred. Please try again."); // Set fetch error message
+      setMessage("An error occurred. Please try again.");
     });
   };
 

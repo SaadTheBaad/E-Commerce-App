@@ -6,7 +6,6 @@ const HomeMainSection = () => {
     const [randomReviews, setRandomReviews] = useState([]);
 
     useEffect(() => {
-        // Select two random reviews
         const getRandomReviews = () => {
             const shuffledReviews = review.sort(() => 0.5 - Math.random());
             const selectedReviews = shuffledReviews.slice(0, 2);
@@ -45,7 +44,7 @@ const HomeMainSection = () => {
                         <div className="rating">
                             {'Rating: '} 
                             {[...Array(review.stars)].map((_star, index) => (
-                                <span key={index}>&#9733;</span> // Unicode for star
+                                <span key={index}>&#9733;</span> 
                             ))}
                         </div>
                     </div>
