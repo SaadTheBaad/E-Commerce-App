@@ -1,7 +1,6 @@
-These were used:
+These dependencies were used:
 npm install react-router-dom
 npm install pip install Flask
-npm install axios
 pip install flask-cors in the backend directory
 
 Steps (NOTE THESE STEPS WERE MADE FOR WINDOWS): 
