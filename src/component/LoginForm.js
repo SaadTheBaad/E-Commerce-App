@@ -64,7 +64,9 @@ const LoginForm = ({ onSwitchToSignup }) => {
           placeholder="Enter your password"
         />
       </div>
+      <div>
       <button type="submit">Login</button>
+      </div>
       <button type="button" onClick={onSwitchToSignup}>Switch to Signup</button>
     </form>
   );
